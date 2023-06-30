@@ -1,0 +1,95 @@
+openapi: 3.0.0
+servers:
+  - url: http://local-csaf-cms.test/
+    description: ''
+info:
+  description: This is the definition of the import interface for a CSAF content management system. It is used for the implemation of CSAF downloader forward feature.
+  version: 1.0.0
+  title: CSAF content management system
+  termsOfService: http://local-csaf-cms.test
+  contact:
+    email: contact@local-csaf-cms.test
+  license:
+    name: MIT
+    url: https://opensource.org/license/mit/
+tags: []
+paths:
+  /api/v1/import:
+    post:
+      summary: Import a CSAF document
+      description: ''
+      parameters: []
+      operationId: import
+      responses:
+        '201':
+          description: successful import
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sucess_response'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+        '422':
+          description: Unprocessable content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/import-request'
+components:
+  schemas:
+    import-request:
+      type: object
+      required:
+        - advisory
+      properties:
+        advisory:
+          type: string
+          format: application/json
+        signature:
+          type: string
+          format: text/plain
+        public_key:
+          type: string
+          format: text/plain
+    sucess_response:
+      type: object
+      properties:
+        status:
+          type: string
+        id:
+          type: string
+    error_response:
+      type: object
+      properties:
+        type: 
+          type: string
+        title: 
+          type: string
+        status: 
+          type: string
+        detail: 
+          type: string
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
+  links: {}
+  callbacks: {}
+security: []
