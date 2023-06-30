@@ -8,7 +8,7 @@ The purpose of this project is to provide an interface for uploading CSAF docume
 
 Details on the REST-API-Endpoint for uploading CSAF documents are availabe in the folder `api` as [OpenAPI YAML](./api/api.yaml) and as [HTML](./api/api.html).
 
-## Running the application
+## Running the application with Docker
 
 To start the application with `docker` & `docker-compose`execute the following command:
 
@@ -17,11 +17,11 @@ docker-compose up
 
 ```
 
-To start the application directly execute the following commands:
+To update and rebuild the image use:
 
 ```BASH
-./gradlew generateKey
-./gradlew bootRun
+docker-compose up --build
+
 ```
 
 The suggested way to ensure all is cleaned up properly is by this command:
@@ -37,6 +37,17 @@ docker images
 
 docker image rm <image-id>
 ```
+
+##
+
+To start the application directly execute the following commands:
+
+```BASH
+./gradlew generateKey
+./gradlew bootRun
+```
+
+
 
 ## Security consideration
 
