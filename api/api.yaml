@@ -57,14 +57,23 @@ components:
       type: object
       required:
         - advisory
+        - validation_status
       properties:
         advisory:
+          description: CSAF advisory as JSON
           type: string
           format: application/json
-        signature:
+        validation_status:
+          description: Result of validation for signature or hash
+          type: string
+          enum: [signature_valid, signature_invalid, hash_valid, hash_invalid, not_validated]
+          format: text/plain
+        hash-256:
+          description: SHA256 hash value of CSAF advisory
           type: string
           format: text/plain
-        public_key:
+        hash-512:
+          description: SHA512 hash value of CSAF advisory
           type: string
           format: text/plain
     sucess_response:
@@ -76,6 +85,7 @@ components:
           type: string
     error_response:
       type: object
+      description: Description of error according to RFC 7807.
       properties:
         type: 
           type: string
