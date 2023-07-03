@@ -3,3 +3,6 @@ services:
   frontend:
     image: csaf/import-test
     build: .
+    ports:
+    - 8080:8080
+    - 8443:8443
