@@ -24,12 +24,15 @@ public class ErrorResponse  implements Response {
   @JsonProperty("detail")
   private String detail = null;
 
-  public ErrorResponse type(String type) {
-    this.type = type;
-    return this;
-  }
+  public ErrorResponse(String title, String status, String detail) {
+	super();
+	this.type = "";
+	this.title = title;
+	this.status = status;
+	this.detail = detail;
+}
 
-  /**
+/**
    * Get type
    * @return type
    **/
