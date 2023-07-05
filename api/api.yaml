@@ -22,13 +22,13 @@ paths:
       operationId: import
       responses:
         '201':
-          description: successful import
+          description: Successful import
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/sucess_response'
         '400':
-          description: Bad Request
+          description: Bad Request (e.g. missing parameter, failed hash validation)
           content:
             application/json:
               schema:
@@ -40,7 +40,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/error_response'
         '422':
-          description: Unprocessable content
+          description: Unprocessable content (e.g. invalid json or non conform json according to CSAF json schema)
           content:
             application/json:
               schema:
@@ -87,8 +87,6 @@ components:
       type: object
       description: Description of error according to RFC 7807.
       properties:
-        type: 
-          type: string
         title: 
           type: string
         status: 
