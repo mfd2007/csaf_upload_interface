@@ -1,0 +1,34 @@
+{
+  "document": {
+    "category": "csaf_base",
+    "csaf_version": "2.0",
+    "tracking": {
+      "generator": {
+        "date": "2023-06-23T05:18:34.327Z",
+        "engine": {
+          "version": "2.2.5",
+          "name": "Secvisogram"
+        }
+      },
+      "current_release_date": "2023-06-22T10:00:00.000Z",
+      "id": "eee",
+      "initial_release_date": "2023-06-28T10:00:00.000Z",
+      "status": "final",
+      "version": "1",
+      "revision_history": [
+        {
+          "date": "2023-06-23T10:00:00.000Z",
+          "number": "1",
+          "summary": "1"
+        }
+      ]
+    },
+    "title": "11",
+    "publisher": {
+      "category": "other",
+      "contact_details": "1",
+      "name": "1",
+      "namespace": "g:ee"
+    }
+  }
+}
