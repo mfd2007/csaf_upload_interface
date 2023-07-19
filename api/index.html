@@ -224,11 +224,13 @@ font-style: italic;
     <div class="field-items">
       <div class="param">advisory (required)</div>
 
-      <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  default: null format: application/json</div><div class="param">signature (optional)</div>
+      <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash; CSAF advisory as JSON default: null format: application/json</div><div class="param">validation_status (required)</div>
 
-      <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  default: null format: text/plain</div><div class="param">public_key (optional)</div>
+      <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash; Result of validation for signature or hash default: null format: text/plain</div><div class="param">hash-256 (optional)</div>
 
-      <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  default: null format: text/plain</div>
+      <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash; SHA256 hash value of CSAF advisory default: null format: text/plain</div><div class="param">hash-512 (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash; SHA512 hash value of CSAF advisory default: null format: text/plain</div>
     </div>  <!-- field-items -->
 
     <h3 class="field-label">Return type</h3>
@@ -255,16 +257,16 @@ font-style: italic;
 
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">201</h4>
-    successful import
+    Successful import
         <a href="#sucess_response">sucess_response</a>
     <h4 class="field-label">400</h4>
-    Bad Request
+    Bad Request (e.g. missing parameter, failed hash validation)
         <a href="#error_response">error_response</a>
     <h4 class="field-label">401</h4>
     Unauthorized
         <a href="#error_response">error_response</a>
     <h4 class="field-label">422</h4>
-    Unprocessable content
+    Unprocessable content (e.g. invalid json or non conform json according to CSAF json schema)
         <a href="#error_response">error_response</a>
   </div> <!-- method -->
   <hr/>
@@ -280,10 +282,9 @@ font-style: italic;
 
   <div class="model">
     <h3><a name="error_response"><code>error_response</code> - </a> <a class="up" href="#__Models">Up</a></h3>
-    <div class='model-description'></div>
+    <div class='model-description'>Description of error according to RFC 7807.</div>
     <div class="field-items">
-      <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
-<div class="param">title (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+      <div class="param">title (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
 <div class="param">status (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
 <div class="param">detail (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
     </div>  <!-- field-items -->

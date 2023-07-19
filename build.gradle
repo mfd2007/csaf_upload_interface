@@ -1,7 +1,7 @@
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.1.1'
-	id 'io.spring.dependency-management' version '1.1.0'
+	id 'io.spring.dependency-management' version '1.1.2'
 	id "org.openapi.generator" version "6.6.0"
 }
 
@@ -19,8 +19,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'io.swagger.core.v3:swagger-annotations:2.2.11'
-	implementation 'com.networknt:json-schema-validator:1.0.85'
+	implementation 'io.swagger.core.v3:swagger-annotations:2.2.15'
+	implementation 'com.networknt:json-schema-validator:1.0.86'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
