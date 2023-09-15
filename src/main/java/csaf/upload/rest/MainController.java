@@ -43,10 +43,10 @@ public class MainController {
     @Operation(summary = "Import a CSAF document", description = "", tags={  })
     @ApiResponses(value = { 
         @ApiResponse(responseCode = "201", 
-        		     description = "successful import", 
-        		     content = @Content(
-        		    		 mediaType = "application/json", 
-        		    		 schema = @Schema(implementation = SucessResponse.class))),
+        	description = "successful import", 
+        	content = @Content(
+        	   		 mediaType = "application/json", 
+        	   		 schema = @Schema(implementation = SucessResponse.class))),
         @ApiResponse(responseCode = "400", 
         	description = "Bad Request", 
         	content = @Content(
