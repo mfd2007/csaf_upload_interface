@@ -3,6 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '3.1.3'
 	id 'io.spring.dependency-management' version '1.1.3'
 	id "org.openapi.generator" version "6.6.0"
+    id("org.springdoc.openapi-gradle-plugin") version "1.7.0"
 }
 
 group = 'test.csaf.import'
@@ -23,6 +24,8 @@ dependencies {
 	implementation 'com.networknt:json-schema-validator:1.0.86'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
 }
 
 tasks.named('test') {
@@ -33,6 +36,12 @@ openApiGenerate {
     generatorName.set("html")
     inputSpec.set("$rootDir/api/api.yaml")
     outputDir.set("$rootDir/api")
+}
+
+openApi {
+    outputDir.set(file("$buildDir/api"))
+    outputFileName.set("api-implementation.json")
+    waitTimeInSeconds.set(10)
 }
 
 task generateKey(type: Exec) {

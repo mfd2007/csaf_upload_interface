@@ -47,7 +47,23 @@ To start the application directly execute the following commands:
 ./gradlew bootRun
 ```
 
+## Update OpenAPI
 
+HTML documation of the API can be generated from ```api/api.yaml```. This file is written manually.
+
+```BASH
+./gradlew openApiGenerate
+```
+
+## OpenAPI YAML of the implementation
+
+A OpenAPI YAML from the implementation can be generated with
+
+```BASH
+./gradlew generateOpenApiDocs
+```
+
+At the moment the documentation in the sourcecode doesn't match completly the manually generated file.
 
 ## Security consideration
 
