@@ -45,13 +45,15 @@ openApi {
 }
 
 task generateKey(type: Exec) {
-	project.delete(
- 	   files("./src/main/resources/keystore/keystore.p12")
-	)	
-
-    workingDir "./src/main/resources/"
-    commandLine '/usr/bin/keytool', '-genkeypair','-alias','csaf','-keyalg','RSA','-keysize','4096','-validity','3650','-dname','CN=localhost','-keypass','changeit','-keystore','keystore/keystore.p12','-storeType','PKCS12','-storepass','changeit' 
-    doLast {
-      println "Keypair generated!"
-    }
+   	workingDir "./src/main/resources/"
+   	commandLine '/usr/bin/keytool', '-genkeypair','-alias','csaf','-keyalg','RSA','-keysize','4096','-validity','3650','-dname','CN=localhost','-keypass','changeit','-keystore','keystore/keystore.p12','-storeType','PKCS12','-storepass','changeit' 
+   	doLast {
+   		println "Keypair generated!"
+   	} 	
 }
+
+generateKey.onlyIf(new Spec<Task>() {
+   boolean isSatisfiedBy(Task task) {
+      return ! project.file('./src/main/resources/keystore/keystore.p12').exists();
+   }
+});
