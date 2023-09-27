@@ -6,7 +6,7 @@ The purpose of this project is to provide an interface for uploading CSAF docume
 
 ## Specication of REST-API-Endpoint
 
-Details on the REST-API-Endpoint for uploading CSAF documents are availabe in the folder `api` as [OpenAPI YAML](./api/api.yaml) and as [HTML](./api/api.html).
+Details on the REST-API-Endpoint for uploading CSAF documents are available in the folder `api` as [OpenAPI YAML](./api/api.yaml) and as [HTML](./api/api.html).
 
 ## Running the application with Docker
 
