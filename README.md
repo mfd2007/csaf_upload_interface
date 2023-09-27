@@ -2,11 +2,11 @@
 
 ## Purpose
 
-The purpose of this project is to provide an interface for uploading CSAF documents that were collected by csaf downloader.
+The purpose of this project is to provide an interface for uploading CSAF documents that were collected by `csaf_downloader`.
 
 ## Specication of REST-API-Endpoint
 
-Details on the REST-API-Endpoint for uploading CSAF documents are availabe in the folder `api` as [OpenAPI YAML](./api/api.yaml) and as [HTML](./api/api.html).
+Details on the REST-API-Endpoint for uploading CSAF documents are available in the folder `api` as [OpenAPI YAML](./api/api.yaml) and as [HTML](./api/api.html).
 
 ## Running the application with Docker
 
@@ -67,4 +67,4 @@ At the moment the documentation in the sourcecode doesn't match completly the ma
 
 ## Security consideration
 
-This is only an test application to support he development. The generated key for TLS is just for testing purposes! Do not use this project in any kind of production environment.
+This is only a test application to support the development. The generated key for TLS is just for testing purposes! Do not use this project in any kind of production environment.
