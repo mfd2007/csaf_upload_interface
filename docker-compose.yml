@@ -1,8 +1,7 @@
-version: '3'
 services:
   frontend:
-    image: csaf/import-test
     build: .
+    container_name: csaf_upload_interface
     ports:
     - 8080:8080
     - 8443:8443
